@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <h1>Earthquakes + COVID cases by Country</h1>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+                <p>Amos Leong Zheng Khang, 30147794</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+                <p>Simple dual idiom html webpage for Week 10 Homework</p>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+
+        <div id="world_map" class="vis-container"></div>
+
+        <div id="bubble_chart" class="vis-container"></div>
+
+
+    </div> <!-- end page -->
+
+    <script type="text/javascript">
+        var specVis1 = "https://raw.githubusercontent.com/KorianderK/FIT3179/main/Vega-Lite/Homework_Week9/js/earthquake.json";
+        var specVis2 = "https://raw.githubusercontent.com/KorianderK/FIT3179/main/Vega-Lite/Homework_Week10/js/covid19week10.json";
+
+
+        vegaEmbed('#world_map', specVis1, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#bubble_chart', specVis2, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+</body>
+
+</html>
